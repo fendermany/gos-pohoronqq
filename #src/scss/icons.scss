@@ -1,0 +1,67 @@
+%ic {
+	font-family: "icons";
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+[class^="_icon-"],
+[class*=" _icon-"] {
+	&:before {
+		@extend %ic;
+		display: block;
+	}
+}
+
+
+._icon-play:before {
+	content: "\e90a";
+	color: #fff;
+ }
+ ._icon-search:before {
+	content: "\e90b";
+	color: #fff;
+ }
+ ._icon-arrow-down:before {
+	content: "\e908";
+	color: #fff;
+ }
+ ._icon-arrow-right:before {
+	content: "\e909";
+ }
+ ._icon-plus:before {
+	content: "\e907";
+	color: #fff;
+ }
+ ._icon-book:before {
+	content: "\e900";
+	color: #fff;
+ }
+ ._icon-brain:before {
+	content: "\e901";
+	color: #fff;
+ }
+ ._icon-check:before {
+	content: "\e902";
+	color: #fff;
+ }
+ ._icon-light:before {
+	content: "\e903";
+	color: #fff;
+ }
+ ._icon-list:before {
+	content: "\e904";
+	color: #fff;
+ }
+ ._icon-specialist:before {
+	content: "\e905";
+	color: #fff;
+ }
+ ._icon-video:before {
+	content: "\e906";
+	color: #fff;
+ }
