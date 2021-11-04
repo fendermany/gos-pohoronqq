@@ -41,7 +41,7 @@ $blueBackground: #365C81;
 @import "null";
 body {
 	color: $mainColor;
-	&._lock {
+	&._lock {123
 		overflow: hidden;
 	}
 }
