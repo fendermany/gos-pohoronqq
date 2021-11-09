@@ -3328,6 +3328,10 @@ input:checked + .slider:before {
     margin-top: 110px;
   }
 
+  .reviews__item {
+    padding: 76px 112px 15px 112px;
+  }
+
   .reviews__img {
     top: -48px;
     width: 96px;
@@ -3476,10 +3480,6 @@ input:checked + .slider:before {
 
   .packages__body {
     grid-template: 1fr/repeat(auto-fit, minmax(486px, 1fr));
-  }
-
-  .reviews__item {
-    padding: 76px 112px 15px 112px;
   }
 }
 
