@@ -32,7 +32,7 @@ if (sliders) {
 	sliders_bild_callback();
 }
 
-function sliders_bild_callback(params) { }
+function sliders_bild_callback(params) {}
 
 let sliderScrollItems = document.querySelectorAll('._swiper_scroll');
 if (sliderScrollItems.length > 0) {
@@ -59,9 +59,17 @@ if (sliderScrollItems.length > 0) {
 }
 
 
-function sliders_bild_callback(params) { }
+function sliders_bild_callback(params) {}
 
-let slider_about = new Swiper('.about__slider', {
+let sliderImages = document.querySelectorAll('.reviews__img');
+
+let sliderThumbnails = [];
+
+sliderImages.forEach(sliderImage => {
+	sliderThumbnails.push(sliderImage.innerHTML);
+});
+
+let sliderReviews = new Swiper('.reviews__slider', {
 	/*
 	effect: 'fade',
 	autoplay: {
@@ -72,7 +80,6 @@ let slider_about = new Swiper('.about__slider', {
 	observer: true,
 	observeParents: true,
 	slidesPerView: 1,
-	spaceBetween: 0,
 	autoHeight: true,
 	speed: 800,
 	//touchRatio: 0,
@@ -81,36 +88,33 @@ let slider_about = new Swiper('.about__slider', {
 	//preloadImages: false,
 	//lazy: true,
 	// Dotts
-	//pagination: {
-	//	el: '.slider-quality__pagging',
-	//	clickable: true,
-	//},
+	pagination: {
+		el: '.reviews__pagging',
+		clickable: true,
+		bulletActiveClass:'reviews__img-active',
+		renderBullet: function (index, className) {
+			return '<div class="reviews__img-thumbnail ' + className + '">' + (sliderThumbnails[index]) + '</div>';
+		 },
+	},
 	// Arrows
 	navigation: {
-		nextEl: '.about__more .more__item_next',
-		prevEl: '.about__more .more__item_prev',
+		nextEl: '.reviews__next',
+		prevEl: '.reviews__prev',
 	},
-	/*
 	breakpoints: {
 		320: {
-			slidesPerView: 1,
-			spaceBetween: 0,
-			autoHeight: true,
+			spaceBetween: 100,
 		},
 		768: {
-			slidesPerView: 2,
-			spaceBetween: 20,
+			spaceBetween: 300,
 		},
 		992: {
-			slidesPerView: 3,
-			spaceBetween: 20,
+			spaceBetween: 500,
 		},
 		1268: {
-			slidesPerView: 4,
-			spaceBetween: 30,
+			spaceBetween: 1000,
 		},
 	},
-	*/
 	on: {
 		lazyImageReady: function () {
 			ibg();
@@ -121,3 +125,6 @@ let slider_about = new Swiper('.about__slider', {
 	//	el: '.swiper-scrollbar',
 	//},
 });
+
+
+

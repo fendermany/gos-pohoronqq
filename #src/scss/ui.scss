@@ -1,7 +1,7 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .button {
 	width: 230px;
-	@include adaptiv-value("height", 60, 42, 1);
+	height: 42px;
 	background: $green;
 	border-radius: 8px;
 	display: flex;
@@ -13,7 +13,10 @@
 	@include adaptiv-value("font-size", 18, 14, 1);
 	@include adaptiv-value("line-height", 22, 17, 1);
 	color: $mainColor;
-
+	cursor: pointer;
+	@media (min-width:$md3+px){
+		 height: 60px; 
+	}
 	&:before {
 		font-size: 20px;
 	}
@@ -88,41 +91,6 @@ ol.counter {
 }
 
 //====================================================================================================
-.ellipsis {
-	display: block;
-	overflow: hidden;
-	width: 100%;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-
-.es {
-	overflow: hidden;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-}
-
-//====================================================================================================
-.table {
-	display: table;
-	font-size: 0;
-	width: 100%;
-	//table-layout: fixed;
-}
-
-.trow {
-	display: table-row;
-}
-
-.cell {
-	display: table-cell;
-
-	&.full {
-		width: 100%;
-	}
-}
-
-//====================================================================================================
 ._ibg {
 	position: relative;
 
@@ -151,87 +119,7 @@ body.ie {
 	}
 }
 
-//====================================================================================================
-._video {
-	position: relative;
-	overflow: hidden;
-	height: 0;
-	padding-bottom: 56.25%;
 
-	video,
-	iframe,
-	object,
-	embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-}
-
-.videobg {
-
-	video,
-	iframe,
-	object,
-	embed {
-		position: fixed;
-		top: 50%;
-		left: 50%;
-		min-width: 100%;
-		min-height: 100%;
-		width: auto;
-		height: auto;
-		z-index: -100;
-		transform: translateX(-50%) translateY(-50%);
-		background-size: cover;
-	}
-}
-
-//====================================================================================================
-// ._more-block
-._more-block {}
-
-// ._more-content
-._more-content {
-	transition: all 0.3s ease 0s;
-	overflow: hidden;
-}
-
-// ._more-item
-._more-item {}
-
-// ._more-link
-._more-link {
-	cursor: pointer;
-
-	span {
-		font-style: normal;
-
-		&:first-child {
-			display: block;
-		}
-
-		&:last-child {
-			display: none;
-		}
-	}
-
-	&._active {
-		span {
-			font-style: normal;
-
-			&:first-child {
-				display: none;
-			}
-
-			&:last-child {
-				display: block;
-			}
-		}
-	}
-}
 
 //====================================================================================================
 %graystyle {
@@ -299,49 +187,6 @@ body.ie {
 	display: none !important;
 }
 
-//====================================================================================================
-._tabs {}
 
-._tabs-item {}
-
-._tabs-block {
-	display: none;
-
-	&._active {
-		display: block;
-	}
-}
-
-//=====================================================================================================================
-.mirror {
-	transform: scale(-1, 1);
-}
-
-//=====================================================================================================================
-.nicescroll-rails {
-	z-index: 1000 !important;
-}
-
-//========================================================================================================================================================
-
-//========================================================================================================================================================
-._custom-scroll {
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: 3px;
-	height: 100%;
-	z-index: 1000;
-
-	//background-color: rgba(0, 0, 0, 0.1);
-	&__line {
-		background-color: rgba(0, 0, 0, 0.5);
-		border-radius: 3px 0 0 3px;
-		position: relative;
-		left: 0;
-		top: 0;
-		width: 100%;
-	}
-}
 
 //</ГОТОВЫЕ КЛАССЫ>====================================================================================================

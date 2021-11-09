@@ -102,66 +102,7 @@ setTimeout(function () {
 	scroll_scroll();
 }, 100);
 
-function scroll_lazy(scr_item) {
-	/*
-	let lazy_src = scr_item.querySelectorAll('*[data-src]');
-	if (lazy_src.length > 0) {
-		for (let index = 0; index < lazy_src.length; index++) {
-			const el = lazy_src[index];
-			if (!el.classList.contains('_loaded')) {
-				el.setAttribute('src', el.getAttribute('data-src'));
-				el.classList.add('_loaded');
-			}
-		}
-	}
-	let lazy_srcset = scr_item.querySelectorAll('*[data-srcset]');
-	if (lazy_srcset.length > 0) {
-		for (let index = 0; index < lazy_srcset.length; index++) {
-			const el = lazy_srcset[index];
-			if (!el.classList.contains('_loaded')) {
-				el.setAttribute('srcset', el.getAttribute('data-srcset'));
-				el.classList.add('_loaded');
-			}
-		}
-	}
-	*/
-	/*
-	window.onload = () => {
-		const observer = new IntersectionObserver((entries, observer) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					console.log(entry)
-					// ссылка на оригинальное изображение хранится в атрибуте "data-src"
-					entry.target.src = entry.target.dataset.src
-					observer.unobserve(entry.target)
-				}
-			})
-		}, { threshold: 0.5 })
 
-		document.querySelectorAll('img').forEach(img => observer.observe(img))
-	}
-	*/
-}
-function scroll_load_item(scr_item) {
-	if (scr_item.classList.contains('_load-map') && !scr_item.classList.contains('_loaded-map')) {
-		let map_item = document.getElementById('map');
-		if (map_item) {
-			scr_item.classList.add('_loaded-map');
-			map();
-		}
-	}
-}
-function scrParallax(block, scrProcent, blockHeight) {
-	let prlxItems = block.querySelectorAll('._prlx-item');
-	if (prlxItems.length > 0) {
-		for (let index = 0; index < prlxItems.length; index++) {
-			const prlxItem = prlxItems[index];
-			let prlxItemAttr = (prlxItem.dataset.prlx) ? prlxItem.dataset.prlx : 3;
-			const prlxItemValue = -1 * (blockHeight / 100 * scrProcent / prlxItemAttr);
-			prlxItem.style.cssText = `transform: translateY(${prlxItemValue}px);`;
-		}
-	}
-}
 //FullScreenScroll
 if (scr_blocks.length > 0 && !isMobile.any()) {
 	disableScroll();
@@ -367,49 +308,7 @@ function preventDefaultForScrollKeys(e) {
 	}*/
 }
 
-function fix_block(scr_fix_block, scr_value) {
-	let window_width = parseInt(window.innerWidth);
-	let window_height = parseInt(window.innerHeight);
-	let header_height = parseInt(document.querySelector('header').offsetHeight) + 15;
-	for (let index = 0; index < scr_fix_block.length; index++) {
-		const block = scr_fix_block[index];
-		let block_width = block.getAttribute('data-width');
-		const item = block.querySelector('._side-block');
-		if (!block_width) { block_width = 0; }
-		if (window_width > block_width) {
-			if (item.offsetHeight < window_height - (header_height + 30)) {
-				if (scr_value > offset(block).top - (header_height + 15)) {
-					item.style.cssText = "position:fixed;bottom:auto;top:" + header_height + "px;width:" + block.offsetWidth + "px;left:" + offset(block).left + "px;";
-				} else {
-					gotoRelative(item);
-				}
-				if (scr_value > (block.offsetHeight + offset(block).top) - (item.offsetHeight + (header_height + 15))) {
-					block.style.cssText = "position:relative;";
-					item.style.cssText = "position:absolute;bottom:0;top:auto;left:0px;width:100%";
-				}
-			} else {
-				gotoRelative(item);
-			}
-		}
-	}
-	function gotoRelative(item) {
-		item.style.cssText = "position:relative;bottom:auto;top:0px;left:0px;";
-	}
-}
 
-if (!isMobile.any()) {
-	//custom_scroll();
-	/*
-	window.addEventListener('wheel', scroll_animate, {
-		capture: true,
-		passive: true
-	});
-	window.addEventListener('resize', custom_scroll, {
-		capture: true,
-		passive: true
-	});
-	*/
-}
 function custom_scroll(event) {
 	scr_body.style.overflow = 'hidden';
 	let window_height = window.innerHeight;

@@ -18,7 +18,18 @@
 }
 
 
-._icon-play:before {
+._icon-lentaa:before {
+	content: "\e90f";
+ }
+ ._icon-slider-left:before {
+	content: "\e90d";
+	color: #fff;
+ }
+ ._icon-slider-right:before {
+	content: "\e90e";
+	color: #fff;
+ }
+ ._icon-play:before {
 	content: "\e90a";
 	color: #fff;
  }
@@ -48,6 +59,9 @@
  ._icon-check:before {
 	content: "\e902";
 	color: #fff;
+ }
+ ._icon-lenta:before {
+	content: "\e90c";
  }
  ._icon-light:before {
 	content: "\e903";

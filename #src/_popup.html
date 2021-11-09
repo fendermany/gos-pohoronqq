@@ -1,22 +1,51 @@
-<div class="popup popup_popup">
+<div class="popup popup_zakaz">
 	<div class="popup__content">
 		<div class="popup__body">
-			<div class="popup__close"></div>
+			<div class="popup__close">
+				<span></span>
+				<span></span>
+			</div>
+			<div class="popup__title">Свяжитесь с нами</div>
+			<div class="popup__choose">Вы выбрали: <span></span></div>
+			<div class="popup__descr">Введите номер мобильного телефона</div>
+			<form data-ajax data-test method="post" data-message="thanks" action="sendmail.php">
+				<input hidden type="text" name="choose">
+				<div class="form__line popup__form-line _fw">
+					<input autocomplete="off" type="text" name="phone" data-error="Введите корректный номер" data-value="+7" class="input popup__form-input _req _phone">
+				</div>
+				<button type="submit" class="form__btn btn popup__form-btn button _fw">Отправить заявку</button>
+			</form>
 		</div>
 	</div>
 </div>
-<div class="popup popup_massagename-message">
+<div class="popup popup_feedback">
 	<div class="popup__content">
 		<div class="popup__body">
-			<div class="popup__close"></div>
+			<div class="popup__close">
+				<span></span>
+				<span></span>
+			</div>
+			<div class="popup__title">Свяжитесь с нами</div>
+			<div class="popup__descr">Введите номер мобильного телефона</div>
+			<form data-ajax data-test method="post" data-message="thanks" action="sendmail.php">
+				<input hidden type="text" name="choose">
+				<div class="form__line popup__form-line _fw">
+					<input autocomplete="off" type="text" name="phone" data-error="Введите корректный номер" data-value="+7" class="input popup__form-input _req _phone">
+				</div>
+				<button type="submit" class="form__btn btn popup__form-btn button _fw">Отправить заявку</button>
+			</form>
 		</div>
 	</div>
 </div>
-<div class="popup popup_video">
+<div class="popup popup_thanks-message">
 	<div class="popup__content">
 		<div class="popup__body">
-			<div class="popup__close popup__close_video"></div>
-			<div class="popup__video _video"></div>
+			<div class="popup__close">
+				<span></span>
+				<span></span>
+			</div>
+			<div class="popup__title">Спасибо</div>
+			<div class="popup__descr">Мы свяжемся с Вами в ближайшее время</div>
 		</div>
 	</div>
 </div>
