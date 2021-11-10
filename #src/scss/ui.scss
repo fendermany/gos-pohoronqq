@@ -7,16 +7,17 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	gap: 10px;
 	padding: 0 10px;
 	font-weight: 500;
 	@include adaptiv-value("font-size", 18, 14, 1);
 	@include adaptiv-value("line-height", 22, 17, 1);
 	color: $mainColor;
 	cursor: pointer;
-	@media (min-width:$md3+px){
-		 height: 60px; 
+
+	@media (min-width:$md3+px) {
+		height: 60px;
 	}
+
 	&:before {
 		font-size: 20px;
 	}
@@ -28,6 +29,9 @@
 	&_plus {
 		justify-content: flex-start;
 		padding: 0 25px;
+		display: grid;
+		grid-template: auto / auto auto;
+		gap: 10px;
 	}
 
 	&_blue {

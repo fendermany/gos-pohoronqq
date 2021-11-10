@@ -94,7 +94,7 @@
 
 		@media (min-width:$md3+px) {
 			display: flex;
-
+			gap: 0;
 			&>*+* {
 				margin-left: 16px;
 			}
@@ -233,6 +233,7 @@
 		@media (min-width:$md3+px) {
 			align-items: flex-start;
 			display: flex;
+			gap: 0;
 			justify-content: space-between;
 			margin-top: 104px;
 
@@ -554,10 +555,6 @@
 
 		&>*+* {
 			margin-top: 40px;
-
-			@media (min-width:$md2+px) {
-				margin-top: 0;
-			}
 		}
 
 	}

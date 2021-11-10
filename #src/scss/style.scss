@@ -241,7 +241,7 @@ body {
 
 	.simpleMenu__item:after,
 	.simpleMenu__item:before {
-		background: #272727;
+		background: #404040;
 	}
 
 	.reviews__item {
@@ -258,6 +258,13 @@ body {
 		background: #959595;
 		color: #fff;
 		font-weight: 500;
+	}
+	.search__menu-nothing svg path{
+		fill: #B9C4CA;
+		stroke: #B9C4CA;
+	}
+	.search__menu-nothing span{
+		color: #828F96;
 	}
 }
 

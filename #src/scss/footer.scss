@@ -106,9 +106,10 @@
 		margin-top: 28px;
 		order: 1;
 		@include adaptiv-value("column-gap", 50, 20, 1);
-		display: flex;
+		display: grid;
 		align-items: flex-start;
 		justify-content: space-between;
+		grid-template: 1fr / minmax(min-content, max-content) minmax(min-content, max-content);
 		@media (min-width:$md3+px) {
 			display: grid;
 			grid-template: minmax(min-content, max-content) minmax(min-content, max-content) / minmax(min-content, max-content) minmax(min-content, max-content);
@@ -147,8 +148,8 @@
 		display: none;
 
 		@media (min-width:$md3+px) {
-			display: flex;
-			flex-direction: column;
+			display: grid;
+			grid-template: minmax(min-content, max-content) / minmax(min-content, max-content);
 			gap: 5px;
 			font-size: 14px;
 			line-height: 150%;
